@@ -1,0 +1,12 @@
+version: "3"
+services:
+  hive-server:
+    image: apache/hive:4.0.0
+    container_name: hive-server
+    environment:
+      SERVICE_NAME: hiveserver2
+    ports:
+      - "10000:10000"   # порт для HiveServer2
+      - "10002:10002"
+    volumes:
+      - "./tmp:/tmp"  # Монтируем локальную папку ./tmp в /tmp контейнера
